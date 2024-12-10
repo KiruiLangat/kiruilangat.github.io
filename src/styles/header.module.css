@@ -1,0 +1,24 @@
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: auto;
+    background-color: transparent;
+}
+.headerLeft{
+    display: flex;
+    align-items: center;
+}
+.headerLeft h1{
+    font-size: 16px;
+    font-weight: 300;
+}
+.headerRight{
+    display: flex;
+    align-items: center;
+}
+.headerRight h1{
+    font-size: 16px;
+    font-weight: 300;
+}

@@ -3,19 +3,20 @@ footer{
     bottom: 0;
     width: 100%;
     height: 50px;
-    border-top: #08282f;
+    border-top: 1.5px solid #08282f;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
+    grid-template-columns: 0.9fr 4fr 0.7fr;
+    justify-content: space-between;
     align-items: center;
     margin: auto;
+
 }
 a{
     text-decoration: none;
     color: #6b898e;
 }
 .letsConnect{
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 300;
     text-align: left;
     margin-left: 20px;
@@ -23,4 +24,93 @@ a{
     flex-direction: row;
     justify-content: left;
     align-items: center;
+    color: #6b898e;
+    
+    
 }
+.middleFooter{
+    height: 50px;
+    border-left: 1.5px solid #08282f;
+    border-right: 1.5px solid #08282f;
+}
+.socials{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+}
+.socials a{
+    margin: 0 2px;
+}
+.XIcon{
+    width: 15!important;
+    height: 15px !important;
+}
+.linkedInIcon, .gitIcon{
+    width: 20px !important;
+    height: 20px !important;
+}
+.gitHub{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: 300;
+    color: #6b898e;
+}
+.gitHub a{
+    margin: 0 10px;
+    
+}
+.mobileFooter{
+    display: none;
+}
+
+@media (max-width: 768px){
+    footer{
+        grid-template-columns: 1fr;
+    }
+    .letsConnect{
+        display: none;
+    }
+    .socials{
+        display: none;
+    }
+    .gitHub{
+        display: none;
+    }
+    .middleFooter{
+        display: none;
+    }
+    .mobileFooter{
+        display: grid;
+        grid-template-columns: 0.9fr 1fr;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+    }
+    .mobileFooter p{
+        font-size: 12px;
+        font-weight: 300;
+        color: #6b898e;
+        text-align: left;
+        margin-left: 20px;
+    }
+    .mobileSocials{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: center;
+        margin-right: 20px;
+        
+    }
+    .mobileSocials a{
+        margin: 0 10px;
+        
+    }
+}
+

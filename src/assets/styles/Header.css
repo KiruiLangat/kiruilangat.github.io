@@ -54,3 +54,56 @@ li{
     font-size: 14px;
     font-weight: 300;
 }
+.mobileMenuIcon{
+    display: none;
+}
+.mobileSidebar{
+    display: none;
+}
+
+@media (max-width: 768px){
+    header{
+        grid-template-columns: 5fr 0.7fr;
+    }
+
+    .myName{
+        font-size: 14px;
+        z-index: 1;
+
+    }
+    nav{
+        display: none;
+    }
+    .contactMe{
+        display: none;
+    }
+    .mobileMenuIcon{
+        display: block;
+        color: #6b898e;
+        z-index: 1;
+    }
+    
+    .mobileSidebar{
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        height:auto;
+        background-color: transparent;
+        z-index: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+    }
+    .routeLink{
+        border: 1px solid #08282f;
+        background-color: #041215;
+        padding: 20px;
+        width: 320px;
+        font-size: 14px;
+        font-weight: 300;
+    }
+    
+
+}

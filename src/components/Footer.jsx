@@ -15,21 +15,39 @@ function Footer() {
   return (
     <footer style={style}>
       <div className='letsConnect'>
-          Let's Connect:
+          _lets-connect:
           <div className='socials'>
             <a href='https://x.com/LangatTed' target='_blank' rel='noreferrer'>
-              <XIcon />
+              <XIcon  className='XIcon'/>
             </a>
             <a href='https://www.linkedin.com/in/ted-langat-a22291121/' target='_blank' rel='noreferrer'>
-              <LinkedInIcon />
+              <LinkedInIcon className='linkedInIcon' />
             </a>
           </div>
       </div>
+      <div className='middleFooter'>
+          
+      </div>
       <div className='gitHub'>
-          @KiruiLangat:
+          @KiruiLangat
           <a href='https://github.com/KiruiLangat' target='_blank' rel='noreferrer'>
-            <GitHubIcon />
+            <GitHubIcon className='gitIcon'/>
           </a>
+      </div>
+
+      <div className='mobileFooter'>
+        <p>_lets-connect</p>
+        <div className='mobileSocials'>
+          <a href='https://x.com/LangatTed' target='_blank' rel='noreferrer'>
+            <XIcon  className='XIcon'/>
+          </a>
+          <a href='https://www.linkedin.com/in/ted-langat-a22291121/' target='_blank' rel='noreferrer'>
+            <LinkedInIcon className='linkedInIcon' />
+          </a>
+          <a href='https://github.com/KiruiLangat' target='_blank' rel='noreferrer'>
+            <GitHubIcon className='gitIcon'/>
+          </a>
+        </div>
       </div>
     </footer>
   );

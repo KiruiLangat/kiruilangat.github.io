@@ -1,0 +1,175 @@
+.landingPageContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    gap: 0;
+    
+    
+}
+.landingContainer{
+    justify-self: center;
+}
+.landingContainer p{
+    font-size: 16px;
+    font-weight: 300;
+    color: #ffffff; /* Ensure high contrast with background */
+}
+.bigName{
+    font-size: 60px;
+    font-weight: 700;
+    color: #ffffff; /* Ensure high contrast with background */
+    margin-top: 5px;
+}
+.title{
+    font-size: 24px;
+    font-weight: 400;
+    color: aqua; /* Ensure high contrast with background */
+    margin-top: 5px;
+}
+.commentary{
+    margin-top: 50px;
+}
+.commentary p{
+    font-size: 14px;
+    font-weight: 300;
+    color: #6b898e; /* Increase contrast */
+    margin-top: 15px;
+}
+.const{
+    font-size: 14px;
+    font-weight: 400;
+    color: aqua; /* Ensure high contrast with background */
+}
+.var{
+    font-size: 14px;
+    font-weight: 300;
+    color: white; /* Ensure high contrast with background */
+}
+.theLink{
+    font-size: 14px;
+    font-weight: 300;
+    color: greenyellow; /* Ensure high contrast with background */
+    margin-top: 5px;
+}
+
+
+/* Right Side */
+.landingContent{
+    border: 1.5px solid #061f24;
+    border-radius: 10px;
+    width: 380px;
+    height: auto;
+    justify-self: center;
+    align-self: center;
+    padding: 20px;
+    /* box-shadow: 0 20px 80px 0 rgba(20, 72, 77, 0.5), 0 10px 80px 20px rgba(110, 84, 206, 0.3); */
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: bisque; }
+}
+
+.typing-effect {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid black;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+.typing-effect{
+    color: bisque;
+    font-size: 18px;
+    font-weight: 300;
+}
+.workItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    
+}
+.workHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0 5px;
+    border: 1.5px solid #061f24;
+    cursor: pointer; /* Indicate that it's clickable */
+}
+.dropdown-arrow {
+    color: #6b898e;
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.workItem.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+.workIcon{
+    font-size: 24px;
+    color: #6b898e;
+}
+.workHeader h2{
+    font-size: 16px;
+    font-weight: 400;
+    color: #6b898e;
+}
+
+.workLine {
+    display: none;
+    transition: max-height 0.3s ease-out;
+}
+.workLine p{
+    margin-left: 20px;
+    font-size: 14px;
+    color: #ffffff80;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 10px;
+    border-right: 1px solid #061f24;
+    border-width: 2px;
+    
+}
+
+.workItem.active .workLine {
+    display: block;
+}
+
+@media (max-width: 768px){
+    .landingPageContainer{
+        margin-left: 0;
+    }
+    .landingContainer p{
+        font-size: 12px;
+    }
+    .bigName{
+        font-size: 40px;
+    }
+    .title{
+        font-size: 18px;
+    }
+    .commentary p{
+        font-size: 12px;
+    }
+    .const{
+        font-size: 12px;
+    }
+    .var{
+        font-size: 12px;
+    }
+    .theLink{
+        font-size: 12px;
+    }
+}

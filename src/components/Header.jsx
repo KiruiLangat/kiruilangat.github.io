@@ -20,7 +20,7 @@ function Header() {
     return(
         <header style={style}>
             <div className='myName' >
-                <Link to= '/'>ted-langat</Link>   
+                <Link to= '/'>ted-langat {'<tl/>'}</Link>   
             </div>
             <nav className='desktopNav'>
                 <ul>

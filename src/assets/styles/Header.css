@@ -10,6 +10,7 @@ header{
     height: 50px;  
     border-bottom: 1.5px solid #061f24;
     padding: 0;
+    
 }
 a{
     text-decoration: none;
@@ -80,7 +81,7 @@ li{
     .mobileMenuIcon{
         display: block;
         color: #6b898e;
-        z-index: 1;
+        z-index: 10;
     }
     
     .mobileSidebar{
@@ -89,20 +90,23 @@ li{
         right: 0;
         width: 100%;
         height:auto;
-        background-color: transparent;
-        z-index: 0;
+        backdrop-filter: blur(10px);
+        background-color: #041215;
+        border-bottom: 1px solid #061f24;
         display: grid;
         grid-template-columns: 1fr;
         justify-items: center;
         align-items: center;
+        z-index: 100;
     }
     .routeLink{
-        border: 1px solid #08282f;
+        border-bottom: 1px solid #061f24;
         background-color: #041215;
         padding: 20px;
         width: 320px;
         font-size: 14px;
         font-weight: 300;
+        height: auto;
     }
     
 

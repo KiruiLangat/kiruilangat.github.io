@@ -1,0 +1,196 @@
+.serviceContainer{
+    width: 100%;
+    height: 100vh;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 3.81fr; /* Ensure three equal sections */
+    justify-content: flex-start; /* Add space between grid items */
+    align-items: left;
+    gap: 0;
+}
+
+
+
+.serviceDashboard{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    height: auto;
+    margin-top: 0;
+    border-right: 1px solid #061f24;
+    overflow-y: auto;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    position: relative;
+    transition: all 0.3s ease; /* Add smooth transition */
+}
+.toggleButton {
+    position: absolute;
+    top: 25px;
+    right: 50px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #6b898e;
+}
+.toggleButton:hover {
+    color: bisque;
+}
+.serviceDashboard.open {
+    width: auto;
+    background-color: transparent; /* Change background color when open */
+}
+.serviceDashboard.closed {
+    width: 80px; /* Adjust width when closed */
+    border: none; /* Remove border when closed */
+}
+
+.serviceDashboard.closed .serviceType {
+    display: none; /* Hide service types when closed */
+}
+.serviceDashboard.closed h1 {
+    display: none; /* Hide h1 when sidebar is closed */
+}
+.serviceDashboard::-webkit-scrollbar {
+    display: none;
+}
+.serviceDashboard h1{
+    position: absolute;
+    font-size: 18px;
+    font-weight: 700;
+    color: #6b898e;
+    margin-top: 5px;
+    z-index: 1;
+}
+.serviceType{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+}
+.serviceItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 0 5px;
+    cursor: pointer; /* Indicate that it's clickable */
+}
+.serviceIcon{
+    font-size: 20px !important;
+    color: #6b898e;
+}
+.serviceItem h2{
+    font-size: 14px;
+    font-weight: 300;
+    color: #6b898e;
+}
+.serviceItem::content:hover{
+    color: bisque;
+}
+.serviceItem.active{
+    color: bisque
+}
+
+.serviceItem:hover .serviceIcon, 
+.serviceItem:hover h2 {
+    color: bisque; /* Change color on hover */
+}
+
+.serviceContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    margin-top: 0;
+    height: 100vh;
+    margin-left: 10px;
+    margin-top: 20px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+
+}
+
+.serviceContent::-webkit-scrollbar {
+    display: none;
+}
+.serviceHeader{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+
+}
+.serviceHeaderContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+}
+.serviceHeader p{
+    font-size: 18px;
+    color: #6b898e;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 10px;
+}
+
+.serviceContentIcon{
+    font-size: 36px !important;
+    color: bisque;
+}
+.serviceHeaderContent h2{
+    font-size: 36px;
+    font-weight: 500;
+    color: bisque;
+    width: 100%;
+    margin: 0 5px;
+}
+
+@media (max-width: 768px) {
+    .serviceContainer {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+    }
+    .serviceDashboard {
+        padding: 10px;
+        height: 100vh;
+        
+    }
+    .serviceDashboard.open{
+        background-color: #05191d7a;
+    }
+    .serviceDashboard.closed{
+        width: 30px;
+    }
+    .serviceContent {
+        width: 100%;
+        padding: 10px;
+    }
+    .serviceHeaderContent h2 , .serviceContentIcon {
+        font-size: 32px !important;
+    }
+    .serviceHeader p {
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+    }
+    .toggleButton {
+        top: 15px;
+        right: 2px;
+    }
+    .toggleButton:hover {
+        color: none;
+    }
+}

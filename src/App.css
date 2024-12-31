@@ -1,8 +1,14 @@
 body{
-    background-color: #030d0f;
+    background-color: #000000;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+    display: none;
 }
 .App{
     padding: 0;
     width: 100%;
     height: auto;
 }
+

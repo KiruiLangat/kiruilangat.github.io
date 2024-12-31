@@ -28,7 +28,7 @@ function Header() {
                         <Link to='/' className={location.pathname === '/' ? 'active' : ''}>_hello</Link>
                     </li>
                     <li>
-                        <Link to='/about' className={location.pathname === '/about' ? 'active' : ''}>_about-me</Link>
+                        <Link to='/services' className={location.pathname === '/services' ? 'active' : ''}>_services</Link>
                     </li>
                     <li>
                         <Link to='/projects' className={location.pathname === '/projects' ? 'active' : ''}>_projects</Link>
@@ -47,7 +47,7 @@ function Header() {
                             <Link to='/' className={location.pathname === '/' ? 'active' : ''} onClick={toggleSidebar}>_hello</Link>
                         </div>
                         <div className='routeLink'>
-                            <Link to='/about' className={location.pathname === '/about' ? 'active' : ''} onClick={toggleSidebar}>_about-me</Link>
+                            <Link to='/services' className={location.pathname === '/services' ? 'active' : ''} onClick={toggleSidebar}>_services</Link>
                         </div>
                         <div className='routeLink'>
                             <Link to='/projects' className={location.pathname === '/projects' ? 'active' : ''} onClick={toggleSidebar}>_projects</Link>

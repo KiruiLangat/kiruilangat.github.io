@@ -1,24 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './assets/styles/LandingPage.css';
 import '@fontsource/fira-code';
 import { Link } from 'react-router-dom';
+import StackIcon from 'tech-stack-icons';
+import Cpanel from './assets/images/cPanel.svg';
+import WooCommerce from './assets/images/WooCommerce.svg';
 
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import WebIcon from '@mui/icons-material/Web';
-import DynamicFeedIcon from '@mui/icons-material/DynamicFeed';
-import DesignServicesIcon from '@mui/icons-material/DesignServices';
+
 
 const style = {
   fontFamily: 'Fira Code, monospace',
 }
 
 function LandingPage() {
-  const [activeIndex, setActiveIndex] = useState(null);
-
-  const handleWorkItemClick = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
+ 
 
   return (
     <div className='landingPageContainer' style={style}>
@@ -28,7 +23,11 @@ function LandingPage() {
           <span className='title'>{'>'} Full Stack Developer</span></p>
           <div className='commentary'>
             <p>{'//'} need convincing? <br/>
-            <span className='const'>const</span> <span className='var' >nextStep = </span><Link to= '/projects' className='theLink'>view projects</Link></p>
+              <span className='const'>const</span> <span className='var' >nextStep = </span>
+              <Link to= '/projects' className='theLink'>
+                view projects
+              </Link>
+            </p>
             <p>{'//'} you can find my portfolio on gitHub <br/>
             <span className='const'>const</span> 
             <span className='var'> githubLink = </span>
@@ -37,60 +36,37 @@ function LandingPage() {
           </div>
       </div>
       <div className='landingContent'>
-        <h1 className='typing-effect'>First, let's identify your needs...</h1>
-        <div className='work'>
-          <div 
-            className={`workItem ${activeIndex === 0 ? 'active' : ''}`} 
-            onClick={() => handleWorkItemClick(0)}
-          >
-            <div className='workHeader'>
-              <ShoppingCartCheckoutIcon className='workIcon' />
-              <h2>E-commerce Platforms</h2>
-              <ArrowDropDownIcon className='dropdown-arrow' />
-            </div>
-            <div className='workLine'>
-              <p>An online store to sell your products or a custom design that's tailored to your brand.</p>
-            </div>
-          </div>
-          <div 
-            className={`workItem ${activeIndex === 1 ? 'active' : ''}`} 
-            onClick={() => handleWorkItemClick(1)}
-          >
-            <div className='workHeader'>
-              < WebIcon className='workIcon' />
-              <h2>Static Websites</h2>
-              <ArrowDropDownIcon className='dropdown-arrow' />
-            </div>
-            <div className='workLine'>
-              <p>A simple, clean website to get your message across.</p>
-            </div>
-          </div>
-          <div 
-            className={`workItem ${activeIndex === 2 ? 'active' : ''}`} 
-            onClick={() => handleWorkItemClick(2)}
-          >
-            <div className='workHeader'>
-              < DynamicFeedIcon className='workIcon' />
-              <h2>Dynamic Web Applications</h2>
-              <ArrowDropDownIcon className='dropdown-arrow' />
-            </div>
-            <div className='workLine'>
-              <p>Web applications with interactive features and are dynamic. More complex than Static Websites.</p>
-            </div>
-          </div>
-          <div
-            className={`workItem ${activeIndex === 3 ? 'active' : ''}`} 
-            onClick={() => handleWorkItemClick(3)}
-          >
-            <div className='workHeader'>
-              < DesignServicesIcon className='workIcon' />
-              <h2>UX/UI Design</h2>
-              <ArrowDropDownIcon className='dropdown-arrow' />
-            </div>
-            <div className='workLine'>
-              <p>A website designs or mockups prior to development.</p>
-            </div>
-          </div>
+        <div className='techStack'>
+          <StackIcon name="reactjs" className='techIcon' data-name="ReactJS" />
+          <StackIcon name="nextjs2" className='techIcon' data-name="Next.js" />
+          <StackIcon name="dart" className='techIcon' data-name="Dart" />
+          <StackIcon name="flutter" className='techIcon' data-name="Flutter" />
+          <StackIcon name="figma" className='techIcon' data-name="Figma" />
+          <StackIcon name="github" className='techIcon' data-name="GitHub" />
+          <StackIcon name="materialui" className='techIcon' data-name="Material UI" />
+          <StackIcon name="reactrouter" className='techIcon' data-name="React Router" />
+          <StackIcon name="kubernetes" className='techIcon' data-name="Kubernetes" />
+        </div>
+        <div className='moreStacks'>
+          <StackIcon name="nodejs" className='techIcon' data-name="Node.js" />
+          <StackIcon name="wordpress" className='techIcon' data-name="WordPress" />
+          <StackIcon name="firebase" className='techIcon' data-name="Firebase" />
+          <StackIcon name="mysql" className='techIcon' data-name="MySQL" />
+          <StackIcon name="mongodb" className='techIcon' data-name="MongoDB" />
+          <StackIcon name="postgresql" className='techIcon' data-name="PostgreSQL" />
+          <StackIcon name="netlify" className='techIcon' data-name="Netlify" />
+          <StackIcon name="netlify2" className='techIcon' data-name="Netlify" />
+          <StackIcon name="postman" className='techIcon' data-name="Postman" />
+        </div>
+        <div className='moreStacks2'>
+          <StackIcon name="html5" className='techIcon' data-name="HTML5" />
+          <StackIcon name="css3" className='techIcon' data-name="CSS3" />
+          <StackIcon name="js" className='techIcon' data-name="JavaScript" />
+          <StackIcon name="python" className='techIcon' data-name="Python" />
+          <StackIcon name="c++" className='techIcon' data-name="C++" />
+          <StackIcon name="kotlin" className='techIcon' data-name="Kotlin" />
+          <img src={Cpanel} className='cpanel' alt="cPanel" data-name="cPanel" />
+          <img src={WooCommerce} className='woocommerce' alt="WooCommerce" data-name="WooCommerce" />
           
         </div>
       </div>

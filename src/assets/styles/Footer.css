@@ -9,6 +9,7 @@ footer{
     justify-content: space-between;
     align-items: center;
     margin: auto;
+    z-index: 2;
 
 }
 a{
@@ -69,9 +70,14 @@ a{
     display: none;
 }
 
+.services-page footer {
+    display: none;
+}
+
 @media (max-width: 768px){
     footer{
         grid-template-columns: 1fr;
+        box-shadow: 0 5px 80px 5px rgba(32, 114, 122, 0.5), 0 10px 80px 20px rgba(112, 85, 210, 0.3);
     }
     .letsConnect{
         display: none;

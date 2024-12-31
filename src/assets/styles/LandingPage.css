@@ -7,9 +7,9 @@
     height: 100vh;
     width: 100%;
     margin: auto;
-    gap: 0;
-    
-    
+
+
+
 }
 .landingContainer{
     justify-self: center;
@@ -17,7 +17,7 @@
 .landingContainer p{
     font-size: 16px;
     font-weight: 300;
-    color: #ffffff; /* Ensure high contrast with background */
+    color: #6b898e; /* Ensure high contrast with background */
 }
 .bigName{
     font-size: 60px;
@@ -25,11 +25,21 @@
     color: #ffffff; /* Ensure high contrast with background */
     margin-top: 5px;
 }
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 .title{
-    font-size: 24px;
+    font-size: 36px;
     font-weight: 400;
-    color: aqua; /* Ensure high contrast with background */
     margin-top: 5px;
+    background: linear-gradient(90deg, aqua, aquamarine, purple, aqua, teal, aquamarine);
+    background-size: 300% 300%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 5.5s infinite;
 }
 .commentary{
     margin-top: 50px;
@@ -56,120 +66,125 @@
     color: greenyellow; /* Ensure high contrast with background */
     margin-top: 5px;
 }
-
-
-/* Right Side */
 .landingContent{
-    border: 1.5px solid #061f24;
-    border-radius: 10px;
-    width: 380px;
-    height: auto;
-    justify-self: center;
-    align-self: center;
-    padding: 20px;
-    /* box-shadow: 0 20px 80px 0 rgba(20, 72, 77, 0.5), 0 10px 80px 20px rgba(110, 84, 206, 0.3); */
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    position: relative;
+    margin-left: 20px;
+    width: 500px;
+    height:80vh;
+    overflow: hidden;
 }
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: bisque; }
-}
-
-.typing-effect {
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 0.15em solid black;
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-}
-
-.typing-effect{
-    color: bisque;
-    font-size: 18px;
-    font-weight: 300;
-}
-.workItem{
+.techStack, .moreStacks ,.moreStacks2, .moreStacks3{
+    position: absolute;
+    top: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: left;
-    
-}
-.workHeader{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
-    gap: 10px;
-    padding: 0 5px;
-    border: 1.5px solid #061f24;
-    cursor: pointer; /* Indicate that it's clickable */
+    transform: translateY(-50%);
 }
-.dropdown-arrow {
-    color: #6b898e;
-    margin-left: auto;
-    transition: transform 0.3s ease;
+.techStack{
+    left: 20%;
+    animation: scrollUp 30s linear infinite; /* Infinite loop */
 }
-
-.workItem.active .dropdown-arrow {
-    transform: rotate(180deg);
+.moreStacks{
+    left: 50%;
+    animation: scrollDown 30s linear infinite; /* Infinite loop */
 }
-.workIcon{
-    font-size: 24px;
-    color: #6b898e;
+.moreStacks2{
+    left: 80%;
+    animation: scrollUp 30s linear infinite; /* Infinite loop */
 }
-.workHeader h2{
-    font-size: 16px;
-    font-weight: 400;
-    color: #6b898e;
-}
-
-.workLine {
-    display: none;
-    transition: max-height 0.3s ease-out;
-}
-.workLine p{
-    margin-left: 20px;
-    font-size: 14px;
-    color: #ffffff80;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 10px;
-    border-right: 1px solid #061f24;
-    border-width: 2px;
-    
+.techIcon , .cpanel ,.woocommerce{
+    width: 50px !important;
+    margin: 20px 0;
+    opacity: 0.8;
+    transform-origin: center;
+    cursor: pointer;
+    position: relative; /* Ensure the pseudo-element is positioned relative to the icon */
 }
 
-.workItem.active .workLine {
-    display: block;
+.techIcon:hover, .cpanel:hover, .woocommerce:hover {
+    transform: scale(1.5); /* Enlarge the icon */
+    transition: transform 0.3s ease-in-out;
+    animation-play-state: paused; /* Stop the loop */
+}
+
+.techIcon:hover::after, .cpanel:hover::after, .woocommerce:hover::after {
+    content: attr(data-name); /* Show the name of the stack */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000; /* Background color for the tooltip */
+    color: #fff !important; /* Text color */
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+    z-index: 10; /* Ensure the tooltip is above other elements */
+}
+
+@keyframes scrollUp {
+    from {
+        transform: translateY(-50%);
+    }
+    to {
+        transform: translateY(-80%);
+    }
+}
+@keyframes scrollDown {
+    from {
+        transform: translateY(-50%);
+    }
+    to {
+        transform: translateY(-20%);
+    }
 }
 
 @media (max-width: 768px){
     .landingPageContainer{
-        margin-left: 0;
+        width: auto;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+    }
+    .landingContainer{
+        justify-self: center;
+        align-self: center;
+        padding: 20px;
+    }
+    .landingContent{
+        display: none;
     }
     .landingContainer p{
-        font-size: 12px;
+        font-size: 14px;
     }
     .bigName{
-        font-size: 40px;
+        font-size: 36px;
+        font-weight: 400;
     }
     .title{
-        font-size: 18px;
+        font-size: 24px;
+        font-weight: 500;
     }
     .commentary p{
         font-size: 12px;
+        font-weight: 400;
     }
     .const{
         font-size: 12px;
+        font-weight: 400;
     }
     .var{
         font-size: 12px;
+        font-weight: 400;
     }
     .theLink{
         font-size: 12px;
+        font-weight: 400;
     }
 }

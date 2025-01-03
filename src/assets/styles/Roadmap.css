@@ -1,0 +1,412 @@
+.roadmapContainer{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+.mockupDesign{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    
+}
+.mockupText{
+    text-align: left;
+    color: rgba(172, 255, 47, 0.806);
+    font-size: 28px;
+    font-weight: 300;
+    margin-left: 20px;
+}
+.roadmapIcon{
+    font-size: 48px !important;
+}
+.Headline{
+    font-size: 16px;
+    font-weight: 300;
+    color: #A8A8A8;
+}
+.mockupVideo{
+    width: 100%;
+    height: 100%;
+    margin-left: -30%;
+    position: relative;
+}
+
+.mockupVideo video {
+    width: 100%;
+    height: 100%;
+}
+.clientFeedback{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.feedbackText{
+    text-align: left;
+    color: teal;
+    font-size: 28px;
+    font-weight: 300;
+    margin-right: 20px;
+}
+.feedbackVideo{
+    width: 100%;
+    height: 100%;
+    margin-right: -20%;
+    position: relative;
+}
+.feedbackVideo video {
+    width: 100%;
+    height: 100%;
+    
+}
+.development{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 100px;
+}
+.developmentText{
+    text-align: left;
+    color: #ffbf00;
+    font-size: 28px;
+    font-weight: 300;
+    margin-right: 20px;
+}
+.developmentVideo{
+    width: 100%;
+    height: 90%;
+    margin-right: -60%;
+    position: relative;
+}
+.developmentVideo video {
+    width: 100%;
+    height: 100%;
+}
+.finally{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.finally h1{
+    color: #a3cbd2;
+    font-size: 40px;
+    font-weight: 300;
+    margin-top: 100px;
+}
+
+.finalLap{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    gap: 20px;
+}
+.testing, .deployment, .maintenance{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+    background-color: #111111 ;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.testing:hover, .deployment:hover, .maintenance:hover{
+    transform: scale(1.09);
+    transition: transform 0.3s ease-in-out;
+}
+
+.testingText{
+    text-align: left;
+    color: #FF6B6B;
+    font-size: 20px;
+    font-weight: 300;
+}
+.deploymentText{
+    text-align: left;
+    color: #3B82F6;
+    font-size: 20px;
+    font-weight: 300;
+}
+.maintenanceText{
+    text-align: left;
+    color:#7CFC00;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+
+.callToAction{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.callToAction h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    color: #ffffffcf;
+}
+.ctaHeadline{
+    font-size: 20px;
+    font-weight: 300;
+    color: #ffffff80;
+    margin-top: 20px;
+}
+.contactButton{
+    font-family: Fira Code;
+    margin-top: 20px;
+    padding: 20px 30px;
+    border: none;
+    background-color: teal;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.contactButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, white 50%, teal 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: background-position 0.3s ease-in-out;
+    z-index: -1;
+}
+.contactButton:hover::before {
+    background-position: left bottom;
+}
+.contactButton:hover {
+    background-color: white;
+    color: teal;
+}
+.ctaIcon{
+    font-size: 20px;
+    margin-right: 10px;
+    justify-self: center;
+}
+.contactButton:hover .ctaIcon {
+    color: teal;
+}
+.contactButton:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.roadmapContainer > div {
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
+
+
+.mockupVideo::after, .feedbackVideo::after, .developmentVideo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+
+@media (max-width:768px){
+    .roadmapContainer{
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+    .mockupDesign{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 0;
+    }
+    .mockupText{
+        margin-left: 0;
+        text-align: left;
+        font-size: 20px;
+    }
+    .mockupText h1{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .roadmapIcon{
+        font-size: 40px !important;
+        
+    }
+    .Headline{
+        text-align: left;
+    }
+    .mockupVideo{
+        width: 140%;
+        height: 100%;
+    }
+    .mockupVideo video {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .mockupText br,
+    .feedbackText br,
+    .developmentText br{
+        display: none;
+    }
+
+    .clientFeedback{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 50px;
+    }
+    .feedbackText{
+        text-align: left;
+        font-size: 20px;
+    }
+    .feedbackText h1{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .feedbackVideo{
+        margin-top: 50px;
+        width: 140%;
+        height: 100%;
+    }
+    .feedbackVideo video {
+        width: 100%;
+        height: 100%;
+    }
+    .development{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 50px;
+    }
+    .developmentText{
+        text-align: left;
+        font-size: 20px;
+    }
+    .developmentText h1{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .developmentVideo{
+        width: 140%;
+        height: 100%;
+        margin-top: 50px;
+        margin-right: 0;
+    }
+    .developmentVideo video {
+        width: 100%;
+        height: 100%;
+    }
+    .finally{
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 50px;
+    }
+    .finally h1{
+        font-size: 36px;
+        margin-top: 50px;
+    }
+    .finalLap{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: flex-start;
+        align-items: left;
+        gap: 20px;
+        margin-top: 50px;
+    }
+    .testing, .deployment, .maintenance{
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-right: 20px;
+        margin-top: 50px;
+    }
+    .testing:hover, .deployment:hover, .maintenance:hover{
+        transform: none;
+
+    }
+    .testingText, .deploymentText, .maintenanceText{
+        text-align: left;
+        font-size: 20px;
+    }
+    .callToAction{
+        margin-top: 80px;
+        margin-bottom: 50px;
+        margin-right: 20px;
+    }
+    .callToAction h1{
+        font-size: 36px;
+        font-weight: 500;
+        text-align: center;
+    }
+    .ctaHeadline{
+        font-size: 14px;
+        margin-top: 50px !important;
+
+    }
+    .contactButton{
+        margin-top: 20px;
+        padding: 15px 25px;
+        font-size: 14px;
+    }
+
+
+}

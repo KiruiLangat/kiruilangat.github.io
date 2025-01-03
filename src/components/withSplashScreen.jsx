@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import '@fontsource/fira-code';
 import './withSplashScreen.css'; 
+import MockupVideo from '../assets/videos/MockupVideo.mp4';
+import FeedbackVideo from '../assets/videos/FeedbackVideo.mp4';
+import CodeVideo from '../assets/videos/CodeVideo.mp4';
 
 const style = {
     fontFamily: 'Fira Code',
@@ -21,12 +24,36 @@ export default function withSplashScreen (WrappedComponent) {
             this.state = {
                 loading: true,
                 fadeOut: false, // Add fadeOut state
+                videosLoaded: false, // Add videosLoaded state
             }
         }
 
         async componentDidMount() {
             try{
-                //await requests/api requests
+                // Preload videos
+                const mockupVideo = new Promise((resolve) => {
+                    const video = document.createElement('video');
+                    video.src = MockupVideo;
+                    video.oncanplaythrough = resolve;
+                });
+
+                const feedbackVideo = new Promise((resolve) => {
+                    const video = document.createElement('video');
+                    video.src = FeedbackVideo;
+                    video.oncanplaythrough = resolve;
+                });
+
+                const codeVideo = new Promise((resolve) => {
+                    const video = document.createElement('video');
+                    video.src = CodeVideo;
+                    video.oncanplaythrough = resolve;
+                });
+
+                await Promise.all([mockupVideo, feedbackVideo, codeVideo]);
+
+                this.setState({
+                    videosLoaded: true,
+                });
 
                 setTimeout(() => {
                     this.setState({
@@ -51,7 +78,7 @@ export default function withSplashScreen (WrappedComponent) {
             if (this.state.loading) return <div className={`splash-container ${this.state.fadeOut ? 'fade-out' : ''}`} style={style}><SplashMessage /></div>;
 
             //otherwise, show the desired route
-            return <WrappedComponent {...this.props} />;
+            return <WrappedComponent {...this.props} videosLoaded={this.state.videosLoaded} />;
         }
     };
 }

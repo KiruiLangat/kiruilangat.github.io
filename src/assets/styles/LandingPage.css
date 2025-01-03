@@ -96,36 +96,25 @@
     left: 80%;
     animation: scrollUp 30s linear infinite; /* Infinite loop */
 }
-.techIcon , .cpanel ,.woocommerce{
+.techIcon , .cpanel ,.woocommerce, .stripe{
     width: 50px !important;
     margin: 20px 0;
     opacity: 0.8;
     transform-origin: center;
     cursor: pointer;
     position: relative; /* Ensure the pseudo-element is positioned relative to the icon */
+    z-index: 1; /* Ensure the icon is above other elements */
+    fill: white; /* Set the fill color to white */
 }
 
-.techIcon:hover, .cpanel:hover, .woocommerce:hover {
+.techIcon:hover, .cpanel:hover, .woocommerce:hover , .stripe:hover{
     transform: scale(1.5); /* Enlarge the icon */
     transition: transform 0.3s ease-in-out;
-    animation-play-state: paused; /* Stop the loop */
 }
 
-.techIcon:hover::after, .cpanel:hover::after, .woocommerce:hover::after {
-    content: attr(data-name); /* Show the name of the stack */
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #000; /* Background color for the tooltip */
-    color: #fff !important; /* Text color */
-    padding: 5px;
-    border-radius: 5px;
-    white-space: nowrap;
-    text-align: center;
-    font-size: 12px;
-    margin-top: 5px;
-    z-index: 10; /* Ensure the tooltip is above other elements */
+.stripe path {
+    width: 100px !important;
+    color: white; /* Set the fill color to white for the Stripe SVG */
 }
 
 @keyframes scrollUp {

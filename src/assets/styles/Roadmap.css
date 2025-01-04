@@ -173,7 +173,7 @@
 .contactButton{
     font-family: Fira Code;
     margin-top: 20px;
-    padding: 20px 30px;
+    padding: 15px 30px;
     border: none;
     background-color: teal;
     color: #fff;
@@ -237,6 +237,7 @@
 .roadmapContainer > div {
     opacity: 0;
     animation: fadeInUp 1s forwards;
+    will-change: opacity, transform;
 }
 
 

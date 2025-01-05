@@ -22,7 +22,7 @@ const style = {
 }
 
 function Services() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Set initial state to false
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);

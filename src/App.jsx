@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 
 function App() {
   const location = useLocation();
-  const hideFooterRoutes = ['/services']; // Hiding footer only on the services page
+  const hideFooterRoutes = ['/services', '/contact', '/projects']; // Hiding footer only on the services page
 
   return (
     <div className="App">

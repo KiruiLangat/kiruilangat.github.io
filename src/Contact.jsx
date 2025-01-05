@@ -37,12 +37,10 @@ function Contact() {
           <h1>Contact Me</h1>
           <p>If you have any inquiries, comments or collaborations in mind</p>
         </div>
-        <div className='contactHandles'>
           <div className='contactHandle'>
             <WhatsAppIcon className='contactIcon' />
             <a href="https://wa.me/+254794331651" target="_blank" rel="noopener noreferrer">Let's Chat</a>
           </div>
-        </div>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <h2>Try Typing</h2>

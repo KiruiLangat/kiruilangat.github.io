@@ -64,7 +64,7 @@ export default function withSplashScreen (WrappedComponent) {
                             loading: false,
                         });
                     }, 500); // Duration of fade out animation
-                }, 1500);
+                }, 1100);
             } catch (err) {
                 console.log(err)
                 this.setState({

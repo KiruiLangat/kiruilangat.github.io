@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/kiruilangat.github.io/static/css/main.564e1d8f.css",
+    "main.css": "/kiruilangat.github.io/static/css/main.216da2b9.css",
     "main.js": "/kiruilangat.github.io/static/js/main.4938ecd0.js",
     "static/js/488.21a3b654.chunk.js": "/kiruilangat.github.io/static/js/488.21a3b654.chunk.js",
     "static/media/HouseDesigns.PNG": "/kiruilangat.github.io/static/media/HouseDesigns.2a5070b0afe854558efc.PNG",
@@ -23,12 +23,12 @@
     "static/media/cPanel.svg": "/kiruilangat.github.io/static/media/cPanel.7c4ee546f8f3abeca5a46039b42476a0.svg",
     "static/media/WooCommerce.svg": "/kiruilangat.github.io/static/media/WooCommerce.a684a908e10289070d3fcae620a85d91.svg",
     "index.html": "/kiruilangat.github.io/index.html",
-    "main.564e1d8f.css.map": "/kiruilangat.github.io/static/css/main.564e1d8f.css.map",
+    "main.216da2b9.css.map": "/kiruilangat.github.io/static/css/main.216da2b9.css.map",
     "main.4938ecd0.js.map": "/kiruilangat.github.io/static/js/main.4938ecd0.js.map",
     "488.21a3b654.chunk.js.map": "/kiruilangat.github.io/static/js/488.21a3b654.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.564e1d8f.css",
+    "static/css/main.216da2b9.css",
     "static/js/main.4938ecd0.js"
   ]
 }

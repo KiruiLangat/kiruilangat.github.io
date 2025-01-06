@@ -1,18 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.0d2aa2bc.css",
-    "main.js": "/static/js/main.2b811f20.js",
+    "main.js": "/static/js/main.5b0bb297.js",
     "static/js/488.21a3b654.chunk.js": "/static/js/488.21a3b654.chunk.js",
-    "static/media/MockupVideoMobile.mp4": "/static/media/MockupVideoMobile.4ab6024df76a59518134.mp4",
     "static/media/MockupVideo.mp4": "/static/media/MockupVideo.ca014bc325cde1fdd57a.mp4",
-    "static/media/FeedbackVideoMobile.mp4": "/static/media/FeedbackVideoMobile.30188bfdc436c6dfc4dd.mp4",
-    "static/media/CodeVideoMobile.mp4": "/static/media/CodeVideoMobile.eb2e749c652dbaf919a4.mp4",
     "static/media/FeedbackVideo.mp4": "/static/media/FeedbackVideo.c069e94d744069b12da4.mp4",
     "static/media/CodeVideo.mp4": "/static/media/CodeVideo.4f22ac3c58bbf43f22de.mp4",
     "static/media/HouseDesigns.PNG": "/static/media/HouseDesigns.e2eeeb4c54d249906b12.PNG",
     "static/media/familysForumSite.PNG": "/static/media/familysForumSite.0d624fbd203bfea0c249.PNG",
-    "static/media/HouseDesignsMobile.png": "/static/media/HouseDesignsMobile.4953eae50c1ebd07ea41.png",
-    "static/media/familysForumSiteMobile.png": "/static/media/familysForumSiteMobile.e3f0aa2cc175bef8f450.png",
     "static/media/fira-code-latin-400-normal.woff": "/static/media/fira-code-latin-400-normal.f6c6f117610544fb0dc1.woff",
     "static/media/fira-code-latin-400-normal.woff2": "/static/media/fira-code-latin-400-normal.602eb93fcc55fbc80a4f.woff2",
     "static/media/fira-code-cyrillic-ext-400-normal.woff": "/static/media/fira-code-cyrillic-ext-400-normal.540023a9b46a9d831de2.woff",
@@ -29,11 +24,11 @@
     "static/media/WooCommerce.svg": "/static/media/WooCommerce.a684a908e10289070d3fcae620a85d91.svg",
     "index.html": "/index.html",
     "main.0d2aa2bc.css.map": "/static/css/main.0d2aa2bc.css.map",
-    "main.2b811f20.js.map": "/static/js/main.2b811f20.js.map",
+    "main.5b0bb297.js.map": "/static/js/main.5b0bb297.js.map",
     "488.21a3b654.chunk.js.map": "/static/js/488.21a3b654.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0d2aa2bc.css",
-    "static/js/main.2b811f20.js"
+    "static/js/main.5b0bb297.js"
   ]
 }

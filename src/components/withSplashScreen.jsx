@@ -4,6 +4,8 @@ import './withSplashScreen.css';
 import MockupVideo from '../assets/videos/MockupVideo.mp4';
 import FeedbackVideo from '../assets/videos/FeedbackVideo.mp4';
 import CodeVideo from '../assets/videos/CodeVideo.mp4';
+import HouseDesigns from '../assets/images/HouseDesigns.PNG';
+import FamilysForum from '../assets/images/familysForumSite.PNG';
 
 const style = {
     fontFamily: 'Fira Code',
@@ -24,11 +26,13 @@ export default function withSplashScreen (WrappedComponent) {
             this.state = {
                 loading: true,
                 fadeOut: false, // Add fadeOut state
-                videosLoaded: false, // Add videosLoaded state
+                assetsLoaded: false, // Change to assetsLoaded state
             }
+            this.handleResize = this.handleResize.bind(this); // Bind handleResize
         }
 
         async componentDidMount() {
+            window.addEventListener('resize', this.handleResize); // Add resize event listener
             try{
                 // Preload videos
                 const mockupVideo = new Promise((resolve) => {
@@ -49,10 +53,23 @@ export default function withSplashScreen (WrappedComponent) {
                     video.oncanplaythrough = resolve;
                 });
 
-                await Promise.all([mockupVideo, feedbackVideo, codeVideo]);
+                // Preload images
+                const houseDesignsImage = new Promise((resolve) => {
+                    const img = new Image();
+                    img.src = HouseDesigns;
+                    img.onload = resolve;
+                });
+
+                const familysForumImage = new Promise((resolve) => {
+                    const img = new Image();
+                    img.src = FamilysForum;
+                    img.onload = resolve;
+                });
+
+                await Promise.all([mockupVideo, feedbackVideo, codeVideo, houseDesignsImage, familysForumImage]);
 
                 this.setState({
-                    videosLoaded: true,
+                    assetsLoaded: true,
                 });
 
                 setTimeout(() => {
@@ -73,12 +90,20 @@ export default function withSplashScreen (WrappedComponent) {
             }
         }
 
+        componentWillUnmount() {
+            window.removeEventListener('resize', this.handleResize); // Remove resize event listener
+        }
+
+        handleResize() {
+            // Handle resize logic if needed
+        }
+
         render() {
             //show loading
             if (this.state.loading) return <div className={`splash-container ${this.state.fadeOut ? 'fade-out' : ''}`} style={style}><SplashMessage /></div>;
 
             //otherwise, show the desired route
-            return <WrappedComponent {...this.props} videosLoaded={this.state.videosLoaded} />;
+            return <WrappedComponent {...this.props} assetsLoaded={this.state.assetsLoaded} />;
         }
     };
 }

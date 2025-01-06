@@ -28,6 +28,14 @@
     color: white;
     height: 200px;
 }
+.fade-out {
+    opacity: 0; /* Fade out effect */
+    transition: opacity 0.5s ease-out; /* Ensure transition is applied to fade-out class */
+    -webkit-transition: opacity 0.5s ease-out; /* For Safari */
+    -moz-transition: opacity 0.5s ease-out; /* For Firefox */
+    -o-transition: opacity 0.5s ease-out; /* For Opera */
+    -ms-transition: opacity 0.5s ease-out; /* For IE */
+}
 
 @media (max-width: 768px) {
     .splash-container {
@@ -47,9 +55,13 @@
         font-size: 24px;
         font-weight: 500;
     }
-}
 
-.fade-out {
-    opacity: 0; /* Fade out effect */
-    transition: opacity 0.5s ease-out; /* Ensure transition is applied to fade-out class */
+    .fade-out {
+        opacity: 0; /* Fade out effect */
+        transition: opacity 0.5s ease-out; /* Ensure transition is applied to fade-out class */
+        -webkit-transition: opacity 0.5s ease-out; /* For Safari */
+        -moz-transition: opacity 0.5s ease-out; /* For Firefox */
+        -o-transition: opacity 0.5s ease-out; /* For Opera */
+        -ms-transition: opacity 0.5s ease-out; /* For IE */
+    }
 }

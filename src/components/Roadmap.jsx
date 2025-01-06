@@ -42,7 +42,10 @@ const Roadmap = () => {
 
       <div className='mockupDesign'>
         <div className='mockupVideo'>
-          <video src={MockupVideo} preload='metadata' autoPlay loop muted  />
+          <video preload="auto" autoPlay muted>
+            <source src={MockupVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div> 
         <div className='mockupText'>
           <h1>I <br/>Design<br/>
@@ -60,7 +63,10 @@ const Roadmap = () => {
           <div className='Headline'>Combining Ideas to your Vision</div>
         </div>
         <div className='feedbackVideo'>
-          <video src={FeedbackVideo} preload='metadata' autoPlay loop muted />
+          <video preload="auto" autoPlay muted  >
+            <source src={FeedbackVideo}/>
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
 
@@ -72,7 +78,10 @@ const Roadmap = () => {
           <div className='Headline'>Turning your Vision into Reality</div>
         </div>
         <div className='developmentVideo'>
-          <video src={CodeVideo} preload='metadata' autoPlay loop muted />
+          <video preload="auto" autoPlay muted>
+            <source src={CodeVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
       <div className='finally'>

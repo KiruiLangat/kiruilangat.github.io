@@ -1,17 +1,8 @@
 import React, { Component } from 'react';
 import '@fontsource/fira-code';
 import './withSplashScreen.css'; 
-import MockupVideo from '../assets/videos/MockupVideo.mp4';
-import FeedbackVideo from '../assets/videos/FeedbackVideo.mp4';
-import CodeVideo from '../assets/videos/CodeVideo.mp4';
 import HouseDesigns from '../assets/images/HouseDesigns.PNG';
 import FamilysForum from '../assets/images/familysForumSite.PNG';
-import MockupVideoMobile from '../assets/videos/MockupVideoMobile.mp4';
-import FeedbackVideoMobile from '../assets/videos/FeedbackVideoMobile.mp4';
-import CodeVideoMobile from '../assets/videos/CodeVideoMobile.mp4';
-import FamilysForumMobile from '../assets/images/familysForumSiteMobile.png';
-import HouseDesignsMobile from '../assets/images/HouseDesignsMobile.png'
-
 
 const style = {
     fontFamily: 'Fira Code',
@@ -38,46 +29,22 @@ export default function withSplashScreen (WrappedComponent) {
 
         async componentDidMount() {
             try {
-                const isMobile = window.innerWidth <= 768;
+                if (window.innerWidth > 768) {
+                    // Preload images
+                    const houseDesignsImage = new Promise((resolve) => {
+                        const img = new Image();
+                        img.src = HouseDesigns;
+                        img.onload = resolve;
+                    });
 
-                // Preload videos
-                const mockupVideo = new Promise((resolve) => {
-                    const video = document.createElement('video');
-                    video.src = isMobile ? MockupVideoMobile : MockupVideo;
-                    video.preload = 'metadata'; // Preload only metadata
-                    video.onloadedmetadata = () => resolve();
-                });
+                    const familysForumImage = new Promise((resolve) => {
+                        const img = new Image();
+                        img.src = FamilysForum;
+                        img.onload = resolve;
+                    });
 
-                const feedbackVideo = new Promise((resolve) => {
-                    const video = document.createElement('video');
-                    video.src = isMobile ? FeedbackVideoMobile : FeedbackVideo;
-                    video.preload = 'metadata'; // Preload only metadata
-                    video.onloadedmetadata = () => resolve();
-                });
-
-                const codeVideo = new Promise((resolve) => {
-                    const video = document.createElement('video');
-                    video.src = isMobile ? CodeVideoMobile : CodeVideo;
-                    video.preload = 'metadata'; // Preload only metadata
-                    video.onloadedmetadata = () => resolve();
-                });
-
-                // Preload images
-                const houseDesignsImage = new Promise((resolve) => {
-                    const img = new Image();
-                    img.src = isMobile ? HouseDesignsMobile : HouseDesigns;
-                    img.loading = 'lazy';
-                    img.onload = resolve;
-                });
-
-                const familysForumImage = new Promise((resolve) => {
-                    const img = new Image();
-                    img.src = isMobile ? FamilysForumMobile : FamilysForum;
-                    img.loading = 'lazy';
-                    img.onload = resolve;
-                });
-
-                await Promise.all([mockupVideo, feedbackVideo, codeVideo, houseDesignsImage, familysForumImage]);
+                    await Promise.all([houseDesignsImage, familysForumImage]);
+                }
 
                 this.setState({
                     assetsLoaded: true,
@@ -90,7 +57,7 @@ export default function withSplashScreen (WrappedComponent) {
                             this.setState({ loading: false });
                         }, 500);
                     });
-                }, 1100);
+                }, 1500);
             } catch (err) {
                 console.log(err)
                 this.setState({

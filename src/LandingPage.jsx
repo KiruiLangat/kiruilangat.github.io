@@ -1,19 +1,65 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './assets/styles/LandingPage.css';
 import '@fontsource/fira-code';
 import { Link } from 'react-router-dom';
 import StackIcon from 'tech-stack-icons';
 import Cpanel from './assets/images/cPanel.svg';
 import WooCommerce from './assets/images/WooCommerce.svg';
-
-
+import MockupVideo from './assets/videos/MockupVideo.mp4';
+import FeedbackVideo from './assets/videos/FeedbackVideo.mp4';
+import CodeVideo from './assets/videos/CodeVideo.mp4';
+import HouseDesigns from './assets/images/HouseDesigns.PNG';
+import FamilysForum from './assets/images/familysForumSite.PNG';
 
 const style = {
   fontFamily: 'Fira Code, monospace',
 }
 
 function LandingPage() {
- 
+  const [assetsLoaded, setAssetsLoaded] = useState(false);
+
+  useEffect(() => {
+    const loadAssets = async () => {
+      const mockupVideo = new Promise((resolve) => {
+        const video = document.createElement('video');
+        video.src = MockupVideo;
+        video.oncanplaythrough = () => resolve();
+      });
+
+      const feedbackVideo = new Promise((resolve) => {
+        const video = document.createElement('video');
+        video.src = FeedbackVideo;
+        video.oncanplaythrough = () => resolve();
+      });
+
+      const codeVideo = new Promise((resolve) => {
+        const video = document.createElement('video');
+        video.src = CodeVideo;
+        video.oncanplaythrough = () => resolve();
+      });
+
+      const houseDesignsImage = new Promise((resolve) => {
+        const img = new Image();
+        img.src = HouseDesigns;
+        img.onload = resolve;
+      });
+
+      const familysForumImage = new Promise((resolve) => {
+        const img = new Image();
+        img.src = FamilysForum;
+        img.onload = resolve;
+      });
+
+      await Promise.all([mockupVideo, feedbackVideo, codeVideo, houseDesignsImage, familysForumImage]);
+      setAssetsLoaded(true);
+    };
+
+    loadAssets();
+  }, []);
+
+  if (!assetsLoaded) {
+    return <div>Loading assets...</div>;
+  }
 
   return (
     <div className='landingPageContainer' style={style}>

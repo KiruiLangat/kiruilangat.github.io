@@ -46,6 +46,7 @@
         box-sizing: border-box;
         min-width: 300px;
         transition: opacity 0.5s ease-out; /* Ensure transition is applied in media query */
+        display: none; /* Hide splash screen on mobile devices */
     }
 
     .splash-text {
@@ -57,6 +58,4 @@
         font-size: 24px;
         font-weight: 500;
     }
-
-    
 }

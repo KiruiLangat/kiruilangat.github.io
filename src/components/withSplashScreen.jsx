@@ -37,22 +37,22 @@ export default function withSplashScreen (WrappedComponent) {
                     const mockupVideo = new Promise((resolve) => {
                         const video = document.createElement('video');
                         video.src = MockupVideo;
-                        video.preload = 'auto';
-                        video.oncanplaythrough = () => resolve();
+                        video.preload = 'metadata';
+                        video.onloadedmetadata = () => resolve();
                     });
 
                     const feedbackVideo = new Promise((resolve) => {
                         const video = document.createElement('video');
                         video.src = FeedbackVideo;
-                        video.preload = 'auto';
-                        video.oncanplaythrough = () => resolve();
+                        video.preload = 'metadata';
+                        video.onloadedmetadata = () => resolve();
                     });
 
                     const codeVideo = new Promise((resolve) => {
                         const video = document.createElement('video');
                         video.src = CodeVideo;
-                        video.preload = 'auto';
-                        video.oncanplaythrough = () => resolve();
+                        video.preload = 'metadata';
+                        video.onloadedmetadata = () => resolve();
                     });
 
                     // Preload images

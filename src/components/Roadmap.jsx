@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/styles/Roadmap.css';
 import '@fontsource/fira-code';
@@ -12,12 +12,15 @@ import BugReportIcon from '@mui/icons-material/BugReport';
 import CloudDoneIcon from '@mui/icons-material/CloudDone';
 import EngineeringIcon from '@mui/icons-material/Engineering';
 import VoiceChatIcon from '@mui/icons-material/VoiceChat';
+import { PreloadContext } from './PreloadContext';
 
 const style = {
   fontFamily: 'Fira Code',
 }
 
 const Roadmap = () => {
+  const { videosLoaded } = useContext(PreloadContext);
+
   useEffect(() => {
     const handleScroll = () => {
       const elements = document.querySelectorAll('.roadmapContainer > div');
@@ -37,12 +40,16 @@ const Roadmap = () => {
     };
   }, []);
 
+  if (!videosLoaded) {
+    return <div>Loading...</div>;
+  }
+
   return( 
     <div className='roadmapContainer' style={style}>
 
       <div className='mockupDesign'>
         <div className='mockupVideo'>
-          <video preload="auto" autoPlay muted loop >
+          <video preload="metadata" autoPlay muted loop playsInline>
             <source src={MockupVideo} />
             Your browser does not support the video tag.
           </video>
@@ -63,7 +70,7 @@ const Roadmap = () => {
           <div className='Headline'>Combining Ideas to your Vision</div>
         </div>
         <div className='feedbackVideo'>
-          <video preload="auto" autoPlay muted loop >
+          <video preload="metadata" autoPlay muted loop playsInline>
             <source src={FeedbackVideo}/>
             Your browser does not support the video tag.
           </video>
@@ -78,7 +85,7 @@ const Roadmap = () => {
           <div className='Headline'>Turning your Vision into Reality</div>
         </div>
         <div className='developmentVideo'>
-          <video preload="auto" autoPlay muted loop>
+          <video preload="metadata" autoPlay muted loop playsInline>
             <source src={CodeVideo} />
             Your browser does not support the video tag.
           </video>

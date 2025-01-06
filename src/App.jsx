@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
-import WithSplashScreen from './components/withSplashScreen'
+import WithSplashScreen from './components/withSplashScreen';
 import Header from './components/Header';
 import LandingPage from './LandingPage';
 import Services from './Services';

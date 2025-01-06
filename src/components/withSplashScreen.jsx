@@ -6,6 +6,10 @@ import FeedbackVideo from '../assets/videos/FeedbackVideo.mp4';
 import CodeVideo from '../assets/videos/CodeVideo.mp4';
 import HouseDesigns from '../assets/images/HouseDesigns.PNG';
 import FamilysForum from '../assets/images/familysForumSite.PNG';
+import MockupVideoMobile from '../assets/videos/MockupVideoMobile.mp4';
+import FeedbackVideoMobile from '../assets/videos/FeedbackVideoMobile.mp4';
+import CodeVideoMobile from '../assets/videos/CodeVideoMobile.mp4';
+
 
 const style = {
     fontFamily: 'Fira Code',
@@ -32,41 +36,41 @@ export default function withSplashScreen (WrappedComponent) {
 
         async componentDidMount() {
             try {
-                if (window.innerWidth > 768) {
-                    // Preload videos
-                    const mockupVideo = new Promise((resolve) => {
-                        const video = document.createElement('video');
-                        video.src = MockupVideo;
-                        video.oncanplaythrough = () => resolve();
-                    });
+                const isMobile = window.innerWidth <= 768;
 
-                    const feedbackVideo = new Promise((resolve) => {
-                        const video = document.createElement('video');
-                        video.src = FeedbackVideo;
-                        video.oncanplaythrough = () => resolve();
-                    });
+                // Preload videos
+                const mockupVideo = new Promise((resolve) => {
+                    const video = document.createElement('video');
+                    video.src = isMobile ? MockupVideoMobile : MockupVideo;
+                    video.oncanplaythrough = () => resolve();
+                });
 
-                    const codeVideo = new Promise((resolve) => {
-                        const video = document.createElement('video');
-                        video.src = CodeVideo;
-                        video.oncanplaythrough = () => resolve();
-                    });
+                const feedbackVideo = new Promise((resolve) => {
+                    const video = document.createElement('video');
+                    video.src = isMobile ? FeedbackVideoMobile : FeedbackVideo;
+                    video.oncanplaythrough = () => resolve();
+                });
 
-                    // Preload images
-                    const houseDesignsImage = new Promise((resolve) => {
-                        const img = new Image();
-                        img.src = HouseDesigns;
-                        img.onload = resolve;
-                    });
+                const codeVideo = new Promise((resolve) => {
+                    const video = document.createElement('video');
+                    video.src = isMobile ? CodeVideoMobile : CodeVideo;
+                    video.oncanplaythrough = () => resolve();
+                });
 
-                    const familysForumImage = new Promise((resolve) => {
-                        const img = new Image();
-                        img.src = FamilysForum;
-                        img.onload = resolve;
-                    });
+                // Preload images
+                const houseDesignsImage = new Promise((resolve) => {
+                    const img = new Image();
+                    img.src = isMobile ? HouseDesigns : HouseDesigns;
+                    img.onload = resolve;
+                });
 
-                    await Promise.all([mockupVideo, feedbackVideo, codeVideo, houseDesignsImage, familysForumImage]);
-                }
+                const familysForumImage = new Promise((resolve) => {
+                    const img = new Image();
+                    img.src = isMobile ? FamilysForum : FamilysForum;
+                    img.onload = resolve;
+                });
+
+                await Promise.all([mockupVideo, feedbackVideo, codeVideo, houseDesignsImage, familysForumImage]);
 
                 this.setState({
                     assetsLoaded: true,

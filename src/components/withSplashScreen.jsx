@@ -63,12 +63,14 @@ export default function withSplashScreen (WrappedComponent) {
                 const houseDesignsImage = new Promise((resolve) => {
                     const img = new Image();
                     img.src = isMobile ? HouseDesignsMobile : HouseDesigns;
+                    img.loading = 'lazy';
                     img.onload = resolve;
                 });
 
                 const familysForumImage = new Promise((resolve) => {
                     const img = new Image();
                     img.src = isMobile ? FamilysForumMobile : FamilysForum;
+                    img.loading = 'lazy';
                     img.onload = resolve;
                 });
 

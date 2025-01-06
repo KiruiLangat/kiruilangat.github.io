@@ -9,6 +9,8 @@ import FamilysForum from '../assets/images/familysForumSite.PNG';
 import MockupVideoMobile from '../assets/videos/MockupVideoMobile.mp4';
 import FeedbackVideoMobile from '../assets/videos/FeedbackVideoMobile.mp4';
 import CodeVideoMobile from '../assets/videos/CodeVideoMobile.mp4';
+import FamilysForumMobile from '../assets/images/familysForumSiteMobile.png';
+import HouseDesignsMobile from '../assets/images/HouseDesignsMobile.png'
 
 
 const style = {
@@ -60,13 +62,13 @@ export default function withSplashScreen (WrappedComponent) {
                 // Preload images
                 const houseDesignsImage = new Promise((resolve) => {
                     const img = new Image();
-                    img.src = isMobile ? HouseDesigns : HouseDesigns;
+                    img.src = isMobile ? HouseDesignsMobile : HouseDesigns;
                     img.onload = resolve;
                 });
 
                 const familysForumImage = new Promise((resolve) => {
                     const img = new Image();
-                    img.src = isMobile ? FamilysForum : FamilysForum;
+                    img.src = isMobile ? FamilysForumMobile : FamilysForum;
                     img.onload = resolve;
                 });
 
@@ -83,7 +85,7 @@ export default function withSplashScreen (WrappedComponent) {
                             this.setState({ loading: false });
                         }, 500);
                     });
-                }, 1500);
+                }, 1100);
             } catch (err) {
                 console.log(err)
                 this.setState({

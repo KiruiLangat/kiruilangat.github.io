@@ -91,8 +91,8 @@ li{
         width: 100%;
         height:auto;
         backdrop-filter: blur(10px);
-        background-color: #041215;
-        border-bottom: 1px solid #061f24;
+        background-color: #06191d;
+        border-bottom: 1px solid #082328;
         display: grid;
         grid-template-columns: 1fr;
         justify-items: center;
@@ -100,8 +100,8 @@ li{
         z-index: 100;
     }
     .routeLink{
-        border-bottom: 1px solid #061f24;
-        background-color: #041215;
+        border-bottom: 1.5px solid #082328;
+        background-color: #06191d;
         padding: 20px;
         width: 320px;
         font-size: 14px;

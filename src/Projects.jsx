@@ -26,7 +26,7 @@ function Projects() {
         <div className='projectCard'>
           <div className='projectDetails'>
             <div className='projectImg'>
-              <img src={HouseDesigns} alt='House Designs Ke' />
+              <img src={HouseDesigns} alt='House Designs Ke'  />
             </div>
             <div className='projectInfo'>
               <div className='projectTitle'>
@@ -50,7 +50,7 @@ function Projects() {
         <div className='projectCard'>
           <div className='projectDetails'>
             <div className='projectImg'>
-              <img src={FamilysForum} alt='Project 2' />
+              <img src={FamilysForum} alt='Project 2'  />
             </div>
             <div className='projectInfo'>
               <div className='projectTitle'>

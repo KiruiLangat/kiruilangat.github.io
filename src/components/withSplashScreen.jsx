@@ -71,14 +71,12 @@ export default function withSplashScreen (WrappedComponent) {
                 });
 
                 setTimeout(() => {
-                    this.setState({
-                        fadeOut: true, // Trigger fade out
+                    this.setState({ fadeOut: true });
+                    requestAnimationFrame(() => {
+                        setTimeout(() => {
+                            this.setState({ loading: false });
+                        }, 500);
                     });
-                    setTimeout(() => {
-                        this.setState({
-                            loading: false,
-                        });
-                    }, 500); // Duration of fade out animation
                 }, 1100);
             } catch (err) {
                 console.log(err)

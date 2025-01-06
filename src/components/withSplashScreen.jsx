@@ -28,11 +28,9 @@ export default function withSplashScreen (WrappedComponent) {
                 fadeOut: false, // Add fadeOut state
                 assetsLoaded: false, // Change to assetsLoaded state
             }
-            this.handleResize = this.handleResize.bind(this); // Bind handleResize
         }
 
         async componentDidMount() {
-            window.addEventListener('resize', this.handleResize); // Add resize event listener
             try{
                 // Preload videos
                 const mockupVideo = new Promise((resolve) => {
@@ -88,14 +86,6 @@ export default function withSplashScreen (WrappedComponent) {
                     loading: false,
                 });
             }
-        }
-
-        componentWillUnmount() {
-            window.removeEventListener('resize', this.handleResize); // Remove resize event listener
-        }
-
-        handleResize() {
-            // Handle resize logic if needed
         }
 
         render() {

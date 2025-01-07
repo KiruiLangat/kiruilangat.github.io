@@ -11,7 +11,7 @@ import HubIcon from '@mui/icons-material/Hub';
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import ThreePIcon from '@mui/icons-material/ThreeP';
 import SpaceDashboardIcon from '@mui/icons-material/SpaceDashboard';
-import DoNotDisturbOnIcon from '@mui/icons-material/DoNotDisturbOn';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 import Roadmap from './components/Roadmap';
 
@@ -71,7 +71,7 @@ function Services() {
               </div>
             </div>
             <button className='toggleButton' onClick={toggleSidebar}>
-              {isSidebarOpen ? <DoNotDisturbOnIcon /> : <SpaceDashboardIcon/>  }
+              {isSidebarOpen ? <CancelIcon /> : <SpaceDashboardIcon/>  }
             </button>
         </div>
         <div className='serviceContent'>

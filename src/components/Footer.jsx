@@ -20,7 +20,7 @@ function Footer() {
             <a href='https://x.com/LangatTed' target='_blank' rel='noreferrer'>
               <XIcon  className='XIcon'/>
             </a>
-            <a href='https://www.linkedin.com/in/ted-langat-a22291121/' target='_blank' rel='noreferrer'>
+            <a href='https://www.linkedin.com/in/ted-langat' target='_blank' rel='noreferrer'>
               <LinkedInIcon className='linkedInIcon' />
             </a>
           </div>
@@ -41,7 +41,7 @@ function Footer() {
           <a href='https://x.com/LangatTed' target='_blank' rel='noreferrer'>
             <XIcon  className='XIcon'/>
           </a>
-          <a href='https://www.linkedin.com/in/ted-langat-a22291121/' target='_blank' rel='noreferrer'>
+          <a href='https://www.linkedin.com/in/ted-langat' target='_blank' rel='noreferrer'>
             <LinkedInIcon className='linkedInIcon' />
           </a>
           <a href='https://github.com/KiruiLangat' target='_blank' rel='noreferrer'>
